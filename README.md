@@ -1,5 +1,9 @@
 # Kali Bounty Scanner Plus
 
+[![CI](https://github.com/Ncn914491/kali-bounty-scanner-plus/workflows/CI/badge.svg)](https://github.com/Ncn914491/kali-bounty-scanner-plus/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+
 **A robust, modular, AI-driven reconnaissance and vulnerability discovery toolkit for ethical bug bounty hunting.**
 
 ## ⚠️ Legal & Ethical Notice
