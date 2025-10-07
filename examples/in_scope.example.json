@@ -1,0 +1,35 @@
+{
+  "program_name": "Example Bug Bounty Program",
+  "program_url": "https://hackerone.com/example-program",
+  "in_scope": [
+    "example.com",
+    "*.example.com",
+    "api.example.com",
+    "app.example.com"
+  ],
+  "out_of_scope": [
+    "test.example.com",
+    "dev.example.com",
+    "staging.example.com"
+  ],
+  "notes": [
+    "Only test production domains",
+    "Do not test authentication bypass on admin panel",
+    "Rate limit: max 10 requests per second",
+    "Report findings within 24 hours"
+  ],
+  "allowed_testing": [
+    "XSS",
+    "SQL Injection (detection only)",
+    "CSRF",
+    "IDOR",
+    "Authentication issues",
+    "Authorization issues"
+  ],
+  "prohibited_testing": [
+    "DoS/DDoS",
+    "Social engineering",
+    "Physical attacks",
+    "Automated scanning without rate limits"
+  ]
+}

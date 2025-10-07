@@ -1,0 +1,43 @@
+# Environment
+.env
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Outputs
+outputs/
+logs/
+*.log
+
+# Database
+db/*.db
+db/*.db-journal
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.key
+*.pem
+secrets/
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Model artifacts
+*.pkl
+*.joblib
+models/*.pkl

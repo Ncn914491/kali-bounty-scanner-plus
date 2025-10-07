@@ -1,0 +1,142 @@
+[
+  {
+    "name": "SQL Injection in login form",
+    "description": "SQL injection vulnerability detected in login parameter",
+    "severity": "high",
+    "evidence": {"payload": "' OR '1'='1", "response": "error"},
+    "label": 1
+  },
+  {
+    "name": "XSS in search parameter",
+    "description": "Reflected XSS found in search query",
+    "severity": "medium",
+    "evidence": {"payload": "<script>alert(1)</script>", "reflected": true},
+    "label": 1
+  },
+  {
+    "name": "Missing X-Frame-Options header",
+    "description": "X-Frame-Options header not set",
+    "severity": "low",
+    "evidence": {"headers": {}},
+    "label": 0
+  },
+  {
+    "name": "Directory listing enabled",
+    "description": "Directory listing is enabled on /uploads/",
+    "severity": "medium",
+    "evidence": {"path": "/uploads/", "status": 200},
+    "label": 1
+  },
+  {
+    "name": "Server version disclosure",
+    "description": "Server header reveals version information",
+    "severity": "info",
+    "evidence": {"header": "Apache/2.4.41"},
+    "label": 0
+  },
+  {
+    "name": "CSRF token missing",
+    "description": "No CSRF token found in form",
+    "severity": "medium",
+    "evidence": {"form": "login"},
+    "label": 1
+  },
+  {
+    "name": "Weak SSL cipher",
+    "description": "Server supports weak SSL ciphers",
+    "severity": "low",
+    "evidence": {"cipher": "TLS_RSA_WITH_3DES_EDE_CBC_SHA"},
+    "label": 0
+  },
+  {
+    "name": "Authentication bypass via parameter tampering",
+    "description": "Able to bypass authentication by modifying user_id parameter",
+    "severity": "critical",
+    "evidence": {"parameter": "user_id", "bypass": true},
+    "label": 1
+  },
+  {
+    "name": "Sensitive data in URL",
+    "description": "Session token passed in URL parameter",
+    "severity": "medium",
+    "evidence": {"parameter": "session_id", "url": true},
+    "label": 1
+  },
+  {
+    "name": "Robots.txt file found",
+    "description": "robots.txt file exists",
+    "severity": "info",
+    "evidence": {"path": "/robots.txt"},
+    "label": 0
+  },
+  {
+    "name": "Open redirect vulnerability",
+    "description": "Unvalidated redirect to external site",
+    "severity": "medium",
+    "evidence": {"parameter": "redirect_url", "external": true},
+    "label": 1
+  },
+  {
+    "name": "Missing Content-Security-Policy",
+    "description": "CSP header not set",
+    "severity": "low",
+    "evidence": {"headers": {}},
+    "label": 0
+  },
+  {
+    "name": "File upload without validation",
+    "description": "File upload accepts any file type",
+    "severity": "high",
+    "evidence": {"endpoint": "/upload", "validation": false},
+    "label": 1
+  },
+  {
+    "name": "Clickjacking possible",
+    "description": "No X-Frame-Options or CSP frame-ancestors",
+    "severity": "low",
+    "evidence": {"headers": {}},
+    "label": 0
+  },
+  {
+    "name": "IDOR in user profile",
+    "description": "Can access other users' profiles by changing ID",
+    "severity": "high",
+    "evidence": {"parameter": "user_id", "access": "unauthorized"},
+    "label": 1
+  },
+  {
+    "name": "Verbose error messages",
+    "description": "Stack traces exposed in error responses",
+    "severity": "low",
+    "evidence": {"error": "stack trace visible"},
+    "label": 0
+  },
+  {
+    "name": "XXE vulnerability",
+    "description": "XML external entity injection possible",
+    "severity": "high",
+    "evidence": {"endpoint": "/api/xml", "xxe": true},
+    "label": 1
+  },
+  {
+    "name": "HTTP method tampering",
+    "description": "Sensitive endpoint accepts GET requests",
+    "severity": "medium",
+    "evidence": {"endpoint": "/api/delete", "method": "GET"},
+    "label": 1
+  },
+  {
+    "name": "Cookie without Secure flag",
+    "description": "Session cookie missing Secure flag",
+    "severity": "low",
+    "evidence": {"cookie": "session_id", "secure": false},
+    "label": 0
+  },
+  {
+    "name": "SSRF via URL parameter",
+    "description": "Server-side request forgery in image fetch",
+    "severity": "high",
+    "evidence": {"parameter": "image_url", "ssrf": true},
+    "label": 1
+  }
+]

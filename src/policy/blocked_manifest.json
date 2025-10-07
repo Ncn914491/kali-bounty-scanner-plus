@@ -1,0 +1,69 @@
+{
+  "blocked_patterns": [
+    {
+      "id": "rce-templates",
+      "pattern": "(rce|remote[-_]?exec|command[-_]?injection|code[-_]?exec)",
+      "default_action": "BLOCK",
+      "notes": "Remote code execution templates - high risk, requires manual approval"
+    },
+    {
+      "id": "sql-exploit",
+      "pattern": "(sqlmap|sql[-_]?injection[-_]?exploit|blind[-_]?sqli[-_]?exploit)",
+      "default_action": "BLOCK",
+      "notes": "SQL exploitation tools - detection only, no exploitation"
+    },
+    {
+      "id": "file-upload-exec",
+      "pattern": "(upload[-_]?exec|webshell|shell[-_]?upload)",
+      "default_action": "BLOCK",
+      "notes": "File upload exploitation - potentially destructive"
+    },
+    {
+      "id": "dos-attacks",
+      "pattern": "(dos|denial[-_]?of[-_]?service|slowloris|flood)",
+      "default_action": "BLOCK",
+      "notes": "Denial of service attacks - always blocked"
+    },
+    {
+      "id": "password-cracking",
+      "pattern": "(password[-_]?crack|brute[-_]?force[-_]?login|hydra)",
+      "default_action": "BLOCK",
+      "notes": "Password cracking - requires explicit permission"
+    },
+    {
+      "id": "data-exfiltration",
+      "pattern": "(data[-_]?exfil|database[-_]?dump|mass[-_]?download)",
+      "default_action": "BLOCK",
+      "notes": "Data exfiltration - not allowed in most programs"
+    }
+  ],
+  "requires_validation": [
+    {
+      "id": "auth-bypass",
+      "pattern": "(auth[-_]?bypass|authentication[-_]?bypass)",
+      "notes": "Authentication bypass testing - validate scope and method"
+    },
+    {
+      "id": "file-inclusion",
+      "pattern": "(lfi|rfi|file[-_]?inclusion)",
+      "notes": "File inclusion testing - ensure read-only"
+    },
+    {
+      "id": "xxe-attacks",
+      "pattern": "(xxe|xml[-_]?external[-_]?entity)",
+      "notes": "XXE testing - validate if out-of-band allowed"
+    },
+    {
+      "id": "ssrf-attacks",
+      "pattern": "(ssrf|server[-_]?side[-_]?request)",
+      "notes": "SSRF testing - validate internal network access rules"
+    }
+  ],
+  "allowed_severities": [
+    "info",
+    "low",
+    "medium",
+    "high"
+  ],
+  "notes": "This manifest defines default policy rules. High-risk actions are blocked by default and require manual override with explicit confirmation. Moderate-risk actions trigger AI validation via Gemini."
+}

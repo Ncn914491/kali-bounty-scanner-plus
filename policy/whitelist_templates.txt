@@ -1,0 +1,33 @@
+# Nuclei Template Whitelist
+# Only templates listed here will be used in scans
+# Add one template path per line
+
+# CVE checks (detection only)
+cves/
+
+# Misconfiguration detection
+misconfiguration/
+
+# Exposed panels (info gathering)
+exposed-panels/
+
+# Default credentials (detection only)
+default-logins/
+
+# Security headers
+misconfiguration/http-missing-security-headers.yaml
+
+# Common vulnerabilities (low/medium severity)
+vulnerabilities/generic/
+
+# Technologies detection
+technologies/
+
+# DNS checks
+dns/
+
+# SSL/TLS checks
+ssl/
+
+# Note: High-risk templates (RCE, SQLi exploitation, etc.) are NOT included
+# Add specific templates only after policy validation
